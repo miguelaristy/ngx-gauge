@@ -1,6 +1,6 @@
 {
-  "name": "demo",
-  "version": "0.0.0",
+  "name": "miguelaristy/ngx-gauge",
+  "version": "0.0.1",
   "scripts": {
     "ng": "ng",
     "start": "ng serve",
@@ -62,5 +62,17 @@
     "protractor": "~7.0.0",
     "ts-node": "~7.0.0",
     "typescript": "^4.9.5"
-  }
+  },
+  "publishConfig": {
+    "registry": "https://npm.pkg.github.com"
+  },
+  "main": "dist/index.js",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/miguelaristy/ngx-gauge.git"
+  },
+  "bugs": {
+    "url": "https://github.com/miguelaristy/ngx-gauge/issues"
+  },
+  "homepage": "https://github.com/miguelaristy/ngx-gauge#readme"
 }
