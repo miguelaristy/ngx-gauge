@@ -1,5 +1,5 @@
 {
-  "name": "miguelaristy/ngx-gauge",
+  "name": "@miguelaristy/ngx-gauge",
   "version": "0.0.1",
   "scripts": {
     "ng": "ng",
@@ -12,7 +12,7 @@
     "e2e": "ng e2e",
     "pack": "cd dist/ngx-gauge && npm pack"
   },
-  "private": true,
+  "private": false,
   "dependencies": {
     "@angular/animations": "^15.1.5",
     "@angular/cdk": "^15.1.5",
@@ -63,16 +63,5 @@
     "ts-node": "~7.0.0",
     "typescript": "^4.9.5"
   },
-  "publishConfig": {
-    "registry": "https://npm.pkg.github.com"
-  },
-  "main": "dist/index.js",
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/miguelaristy/ngx-gauge.git"
-  },
-  "bugs": {
-    "url": "https://github.com/miguelaristy/ngx-gauge/issues"
-  },
-  "homepage": "https://github.com/miguelaristy/ngx-gauge#readme"
+  "main": "dist/index.js"
 }
