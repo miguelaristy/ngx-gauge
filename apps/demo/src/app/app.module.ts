@@ -1,3 +1,4 @@
+/* eslint-disable jsdoc/newline-after-description */
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 
@@ -5,7 +6,7 @@ import { AppComponent } from './app.component';
 import { HighlightModule, HIGHLIGHT_OPTIONS } from 'ngx-highlightjs';
 import { GettingStartedComponent } from './getting-started/getting-started.component';
 import { DocumentationComponent } from './documentation/documentation.component';
-import { NgxGaugeModule } from 'ngx-gauge';
+
 import { PlaygroundComponent } from './playground/playground.component';
 import { DemosComponent } from './demos/demos.component';
 
@@ -21,6 +22,7 @@ import { MatLegacyCardModule as MatCardModule } from '@angular/material/legacy-c
 import { FormsModule } from '@angular/forms';
 import { MatLegacyFormFieldModule as MatFormFieldModule } from '@angular/material/legacy-form-field';
 import {MatLegacyTabsModule as MatTabsModule } from '@angular/material/legacy-tabs';
+import { NgxGaugeModule } from 'projects/ngx-gauge/src/public_api';
 
 
 @NgModule({
@@ -33,20 +35,20 @@ import {MatLegacyTabsModule as MatTabsModule } from '@angular/material/legacy-ta
   ],
   imports: [
     BrowserModule,
-    BrowserAnimationsModule, 
-    NgxGaugeModule,
+    BrowserAnimationsModule,
     HighlightModule,
     FormsModule,
     MatFormFieldModule,
     MatInputModule,
     MatButtonModule,
-    MatCheckboxModule, 
+    MatCheckboxModule,
     MatToolbarModule,
-    MatSelectModule, 
+    MatSelectModule,
     MatSliderModule,
-    MatSlideToggleModule, 
+    MatSlideToggleModule,
     MatCardModule,
-    MatTabsModule
+    MatTabsModule,
+    NgxGaugeModule
   ],
   providers: [
     {

@@ -1,3 +1,10 @@
+/* eslint-disable jsdoc/newline-after-description */
+/* eslint-disable @typescript-eslint/semi */
+/* eslint-disable quote-props */
+/* eslint-disable @typescript-eslint/naming-convention */
+/* eslint-disable @typescript-eslint/quotes */
+/* eslint-disable @typescript-eslint/member-ordering */
+/* eslint-disable @typescript-eslint/no-inferrable-types */
 import { Component, OnInit } from '@angular/core';
 
 @Component({
