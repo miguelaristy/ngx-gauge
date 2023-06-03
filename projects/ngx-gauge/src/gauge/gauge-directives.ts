@@ -1,25 +1,27 @@
+/* eslint-disable @angular-eslint/directive-selector */
+/* eslint-disable @angular-eslint/directive-class-suffix */
 import { Directive } from "@angular/core";
 
 @Directive({
   selector: "ngx-gauge-append",
-  exportAs: "ngxGaugeAppend"
+  exportAs: "ngxGaugeAppend",
 })
 export class NgxGaugeAppend {}
 
 @Directive({
   selector: "ngx-gauge-prepend",
-  exportAs: "ngxGaugePrepend"
+  exportAs: "ngxGaugePrepend",
 })
 export class NgxGaugePrepend {}
 
 @Directive({
   selector: "ngx-gauge-value",
-  exportAs: "ngxGaugeValue"
+  exportAs: "ngxGaugeValue",
 })
 export class NgxGaugeValue {}
 
 @Directive({
   selector: "ngx-gauge-label",
-  exportAs: "ngxGaugeLabel"
+  exportAs: "ngxGaugeLabel",
 })
 export class NgxGaugeLabel {}

@@ -1,21 +1,15 @@
 /* eslint-disable @typescript-eslint/no-shadow */
 /* eslint-disable @typescript-eslint/prefer-for-of */
-/* eslint-disable @angular-eslint/component-class-suffix */
 /* eslint-disable @angular-eslint/no-host-metadata-property */
 /* eslint-disable guard-for-in */
-/* eslint-disable prefer-arrow/prefer-arrow-functions */
-/* eslint-disable space-before-function-paren */
 /* eslint-disable no-var */
 /* eslint-disable prefer-const */
 /* eslint-disable one-var */
-/* eslint-disable eqeqeq */
 /* eslint-disable @typescript-eslint/ban-types */
 /* eslint-disable curly */
 /* eslint-disable @typescript-eslint/member-ordering */
-/* eslint-disable @typescript-eslint/quotes */
 /* eslint-disable brace-style */
 /* eslint-disable @typescript-eslint/no-inferrable-types */
-/* eslint-disable @typescript-eslint/naming-convention */
 import {
   Component,
   Input,
@@ -30,7 +24,7 @@ import {
   ContentChild,
   OnInit,
 } from "@angular/core";
-import { NgxGaugeError } from "./gauge-error";
+
 import {
   clamp,
   coerceBooleanProperty,
@@ -75,7 +69,9 @@ export type NgxGaugeCap = "round" | "butt";
   },
   encapsulation: ViewEncapsulation.None,
 })
-export class NgxGauge implements AfterViewInit, OnChanges, OnDestroy, OnInit {
+export class NgxGaugeComponent
+  implements AfterViewInit, OnChanges, OnDestroy, OnInit
+{
   @ViewChild("canvas", { static: true }) _canvas: ElementRef;
   @ViewChild("rLabel", { static: true }) _label: ElementRef;
   @ViewChild("reading", { static: true }) _reading: ElementRef;
@@ -238,12 +234,12 @@ export class NgxGauge implements AfterViewInit, OnChanges, OnDestroy, OnInit {
 
   private _getBounds(type: NgxGaugeType) {
     let head, tail, start, end;
-    if (type == "semi") {
+    if (type === "semi") {
       head = Math.PI;
       tail = 2 * Math.PI;
       start = 180;
       end = 360;
-    } else if (type == "full") {
+    } else if (type === "full") {
       head = 1.5 * Math.PI;
       tail = 3.5 * Math.PI;
       start = 270;
@@ -354,7 +350,7 @@ export class NgxGauge implements AfterViewInit, OnChanges, OnDestroy, OnInit {
     let y2 =
       (radius + this.thick / 2 + offset + len) * Math.sin(rad) + center.y;
 
-    if (type == "triangle") {
+    if (type === "triangle") {
       //Draw the triangle marker
       this._context.beginPath();
       this._context.strokeStyle = color;
@@ -428,7 +424,7 @@ export class NgxGauge implements AfterViewInit, OnChanges, OnDestroy, OnInit {
 
   // canvas height will be shorter for type 'semi' and 'arch'
   private _getCanvasHeight() {
-    return this.type == "arch" || this.type == "semi"
+    return this.type === "arch" || this.type === "semi"
       ? 0.85 * this._getHeight()
       : this._getHeight();
   }
@@ -472,9 +468,7 @@ export class NgxGauge implements AfterViewInit, OnChanges, OnDestroy, OnInit {
 
   private _getThresholdMatchForValue(value) {
     const match = Object.keys(this.thresholds)
-      .filter(function (item) {
-        return isNumber(item) && Number(item) <= value;
-      })
+      .filter((item) => isNumber(item) && Number(item) <= value)
       .sort((a, b) => Number(a) - Number(b))
       .reverse()[0];
 
@@ -493,9 +487,7 @@ export class NgxGauge implements AfterViewInit, OnChanges, OnDestroy, OnInit {
 
   private _getNextThreshold(value): number {
     const match = Object.keys(this.thresholds)
-      .filter(function (item) {
-        return isNumber(item) && Number(item) > value;
-      })
+      .filter((item) => isNumber(item) && Number(item) > value)
       .sort((a, b) => Number(a) - Number(b));
 
     if (match && match[0] !== undefined) {
@@ -558,7 +550,7 @@ export class NgxGauge implements AfterViewInit, OnChanges, OnDestroy, OnInit {
       window.cancelAnimationFrame(self._animationRequestID);
     }
 
-    function animate(timestamp) {
+    const animate = (timestamp) => {
       timestamp = timestamp || new Date().getTime();
       let runtime = timestamp - startTime;
       let progress = Math.min(runtime / duration, 1);
@@ -572,9 +564,9 @@ export class NgxGauge implements AfterViewInit, OnChanges, OnDestroy, OnInit {
       } else {
         window.cancelAnimationFrame(self._animationRequestID);
       }
-    }
+    };
     if (this._animate) {
-      if (nv != undefined && ov != undefined) {
+      if (nv !== undefined && ov !== undefined) {
         displacement = unit * nv - unit * ov;
       }
       self._animationRequestID = window.requestAnimationFrame((timestamp) => {
@@ -615,7 +607,15 @@ export class NgxGauge implements AfterViewInit, OnChanges, OnDestroy, OnInit {
         var angle = bounds.start + n * perD;
 
         var m = this.markers[mv];
-        this._addMarker(angle, m.color, m.label, m.type, m.size, m.font, m.labelColor);
+        this._addMarker(
+          angle,
+          m.color,
+          m.label,
+          m.type,
+          m.size,
+          m.font,
+          m.labelColor
+        );
       }
   }
 

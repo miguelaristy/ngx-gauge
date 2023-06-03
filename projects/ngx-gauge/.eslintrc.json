@@ -5,6 +5,9 @@
     {
       "files": ["*.ts"],
       "rules": {
+        "@typescript-eslint/quotes": "off",
+        "@typescript-eslint/naming-convention": "off",
+        "jsdoc/newline-after-description": "off",
         "@angular-eslint/directive-selector": [
           "error",
           {
